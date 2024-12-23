@@ -5,10 +5,11 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 public class QuestController extends HttpServlet {
-    private static String player = "Ghost";
     private final HttpResolver httpResolver = Winter.find(HttpResolver.class);
     private static String getJsp(String view) {return "/WEB-INF/quest" + view + ".jsp";}
 
@@ -26,12 +27,12 @@ public class QuestController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        if(!request.getParameter("name").equals("null"))
-        {
-            player = request.getParameter("name");
-        }
-        System.out.println(player);
+        //response.setContentType("text/html");
+
+        String name = request.getParameter("name");
+        HttpSession session = request.getSession();
+        session.setAttribute("questName", name);
+
         String redirect = getJsp(request.getRequestURI());
         RequestDispatcher rd = request.getRequestDispatcher(redirect);
         try {

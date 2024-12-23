@@ -22,14 +22,14 @@
     <link rel="stylesheet" href="../assets/css/Navigation-Menu.css">
 </head>
 
-<body style="background: #293555;--bs-primary: #0d6efd;--bs-primary-rgb: 13,110,253;filter: blur(0px);">
+<body style="background: linear-gradient(rgba(41,53,85,0.92) 0%, rgba(41,53,85,0.92)), url(&quot;assets/img/stars.gif&quot;), #212b44;">
 <nav class="navbar navbar-expand-md navbar-light pb-2 mt-0 mb-lg-2 pb-lg-2" style="background: rgb(61,58,65);box-shadow: inset 0px 8px 1px rgba(217,221,224,0.7);font-size: 23px;color: rgb(255,255,255);border-color: rgb(255,255,255);text-shadow: 0px 0px 7px rgb(0,0,0);">
     <div class="container-fluid"><img id="home" class="ps-lg-0 ms-lg-2 pb-0 mt-1 me-2 ps-0 ms-2" src="../assets/img/Logo.png" width="43" height="49" style="font-family: Amarante, serif;color: #eeeeee;" href="#">
         <div><a class="navbar-brand d-none" href="#"> </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
         <div class="collapse navbar-collapse me-xl-0 pe-xl-0 pt-0 pb-0 pe-5 me-0 ps-0 ms-0" id="navcol-1" style="margin-right: -510px;padding-right: 666px;">
             <ul class="navbar-nav mx-auto main-nav">
                 <li class="nav-item"><a class="nav-link pb-0" id="home" href="/" style="font-family: Amarante, serif;color: #eeeeee;">Квест</a></li>
-                <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Статистика</a></li>
+                <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link pb-0" href="statistics-page" style="font-family: Amarante, serif;color: #eeeeee;">Статистика</a></li>
                 <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Новости</a></li>
                 <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link mb-0 pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Форум</a></li>
                 <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link mt-0 mb-0 pb-0" href="list-user" style="font-family: Amarante, serif;color: #eeeeee;">Пользователи</a></li>

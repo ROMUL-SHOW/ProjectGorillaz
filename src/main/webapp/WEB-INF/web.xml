@@ -15,5 +15,7 @@
         <url-pattern>/step-3</url-pattern> <!-- Нужно использовать слэш в начале -->
         <url-pattern>/step-4</url-pattern> <!-- Нужно использовать слэш в начале -->
         <url-pattern>/step-5</url-pattern> <!-- Нужно использовать слэш в начале -->
+        <url-pattern>/victory</url-pattern> <!-- Нужно использовать слэш в начале -->
+        <url-pattern>/game-over</url-pattern> <!-- Нужно использовать слэш в начале -->
     </servlet-mapping>
 </web-app>
