@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../assets/css/Navigation-Menu.css">
 </head>
 
-<body style="background: linear-gradient(rgba(41,53,85,0.92) 0%, rgba(41,53,85,0.92)), url(&quot;assets/img/stars.gif&quot;), #212b44;">
+<body style="background: linear-gradient(rgb(227,209,169) 0%, rgba(98,75,133,0.92));">
 <nav class="navbar navbar-expand-md navbar-light pb-2 mt-0 mb-lg-2 pb-lg-2" style="background: rgb(61,58,65);box-shadow: inset 0px 8px 1px rgba(217,221,224,0.7);font-size: 23px;color: rgb(255,255,255);border-color: rgb(255,255,255);text-shadow: 0px 0px 7px rgb(0,0,0);">
     <div class="container-fluid"><img id="home" class="ps-lg-0 ms-lg-2 pb-0 mt-1 me-2 ps-0 ms-2" src="../assets/img/Logo.png" width="43" height="49" style="font-family: Amarante, serif;color: #eeeeee;" href="#">
         <div><a class="navbar-brand d-none" href="#"> </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>

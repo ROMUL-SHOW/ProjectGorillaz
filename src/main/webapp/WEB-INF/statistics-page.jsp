@@ -20,15 +20,18 @@
             CountVictorys = 0;
             session1.setAttribute("totalCount", totalCount);
         }
-
-
         %>
-<div>
-    <div style="color:white; padding-left: 20px;">
+    <div style="color:#3d3a40; padding-left: 20px;">
         <h2><%="Количество раз сыграно: " + totalCount%> </h2>
         <h2> <%="Количество побед: " + CountVictorys%> </h2>
     </div>
+
+<br>
+<div style="display: flex; justify-content: center;  height: 50vh;">
+    <div id="diagram" style="width: 600px; height: 500px;"></div>
 </div>
+
+
 
 <script>
     google.load("visualization", "1", {packages:["corechart"]});
@@ -51,10 +54,5 @@
         chart.draw(data, options);
     }
 </script>
-
-<br><br><br>
-<div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
-    <div id="diagram" style="width: 600px; height: 500px;"></div>
-</div>
 </body>
 

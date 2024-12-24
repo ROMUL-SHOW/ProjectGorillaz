@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="container py-4 py-xl-5 pt-lg-4 pb-lg-2 mt-lg-0 mt-0 pt-5" id="quest-div">
-    <div class="row gy-4 gy-md-0" style="background: #18ab00;">
+    <div class="row gy-4 gy-md-0" style="background: #3bca97;">
         <div class="col-md-6 d-xxl-flex pt-lg-0 mt-lg-0">
             <div class="border rounded p-xl-5 m-xl-5" style="background: #ffffff;">
                 <img class="rounded img-fluid w-100 fit-cover pt-lg-0" style="min-height: 300px;" src="assets/img/happy-end.gif" width="336" height="403"></div>

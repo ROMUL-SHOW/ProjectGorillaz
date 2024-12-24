@@ -19,15 +19,15 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getRequestURI().equals("/statistics-page")) {
+/*        if(req.getRequestURI().equals("/statistics-page")) {
             String jsp = getJsp("statistics-page");
             req.getRequestDispatcher(jsp).forward(req, resp);
-        } else {
+        } else {*/
             Command command = httpResolver.resolve(req);
             String view = command.doGet(req);
             String jsp = getJsp(view);
             req.getRequestDispatcher(jsp).forward(req, resp);
-        }
+        //}
     }
 
     @Override
