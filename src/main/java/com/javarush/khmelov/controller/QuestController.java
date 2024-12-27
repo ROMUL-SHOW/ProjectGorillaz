@@ -27,7 +27,7 @@ public class QuestController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //response.setContentType("text/html");
+        response.setContentType("text/html");
 
         String name = request.getParameter("name");
         HttpSession session = request.getSession();

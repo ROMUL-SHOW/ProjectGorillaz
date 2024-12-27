@@ -1,5 +1,4 @@
 package com.javarush.khmelov.entity;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,17 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
-
+public class Quest {
     private Long id;
-
-    private String login;
-
-    private String password;
-
-    private Role role;
-
-    public String getImage() { //TODO move to DTO
-        return "image-" + id;
-    }
+    private String reason;
+    private String question;
+    private String answerPositive;
+    private String answerNegative;
+    private String pathToImage;
 }

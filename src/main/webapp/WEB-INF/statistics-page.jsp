@@ -6,26 +6,10 @@
 </head>
 <body>
 <p>
-    <%
-        HttpSession session1 = request.getSession();
-        Integer totalCount = (Integer) session1.getAttribute("totalCount");
-        if (totalCount == null) {
-            totalCount = 0;
-            session1.setAttribute("totalCount", totalCount);
-
-        }
-
-        Integer CountVictorys = (Integer) session1.getAttribute("CountVictorys");
-        if (CountVictorys == null) {
-            CountVictorys = 0;
-            session1.setAttribute("totalCount", totalCount);
-        }
-        %>
     <div style="color:#3d3a40; padding-left: 20px;">
-        <h2><%="Количество раз сыграно: " + totalCount%> </h2>
-        <h2> <%="Количество побед: " + CountVictorys%> </h2>
+        <h2><%="Количество раз сыграно: " + request.getSession().getAttribute("totalCount")%> </h2>
+        <h2> <%="Количество побед: " + request.getSession().getAttribute("CountVictory")%> </h2>
     </div>
-
 <br>
 <div style="display: flex; justify-content: center;  height: 50vh;">
     <div id="diagram" style="width: 600px; height: 500px;"></div>
@@ -39,8 +23,8 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Результат', 'Количество'],
-            ['Всего', <%=totalCount%>],
-            ['Победы', <%=CountVictorys%>],
+            ['Всего', <%=request.getSession().getAttribute("totalCount")%>],
+            ['Победы', <%=request.getSession().getAttribute("CountVictory")%>],
         ]);
         var options = {
             title: 'Статистика',

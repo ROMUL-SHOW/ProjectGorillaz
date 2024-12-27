@@ -6,7 +6,13 @@
         <fieldset>
 
             <!-- Form Name -->
-            <legend>Edit user:</legend>
+            <c:if test="${requestScope.user==null}">
+                <legend>Create user:</legend>
+            </c:if>
+            <c:if test="${requestScope.user!=null}">
+                <legend>Edit user:</legend>
+            </c:if>
+
 
             <!-- Text input-->
             <div class="form-group">

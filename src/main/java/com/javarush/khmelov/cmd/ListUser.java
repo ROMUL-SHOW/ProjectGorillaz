@@ -21,6 +21,4 @@ public class ListUser implements Command {
         request.setAttribute("users", users);
         return getView();
     }
-
-
 }

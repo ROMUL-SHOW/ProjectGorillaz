@@ -34,9 +34,9 @@
         var formData = $(this).serialize();
 
         $.ajax({
-            url: 'step-1',
-            method:'POST',
-            data: formData,
+            url: 'quest-steps',
+            method:'GET',
+            data: formData + "&id=1",
             success: function (response){
                 $("#quest-div-send-name").html(response);
             },
