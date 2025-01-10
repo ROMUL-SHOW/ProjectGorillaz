@@ -22,10 +22,11 @@ public class QuestSteps implements Command {
         if(stringId.equals("5")){
             stringId = getVictory(request);
         }
+
         if(request.getParameter("name")!=null) {
             setQuestName(request);
         }
-        
+
         if (stringId != null) {
             long id = Long.parseLong(stringId);
             Optional<Quest> optionalQuest = questService.get(id);
@@ -37,7 +38,34 @@ public class QuestSteps implements Command {
                 request.setAttribute("quest", quest);
             }
         }
+        if(stringId.equals("1")){
+            HttpSession session = request.getSession();
+            Integer totalCount = (Integer) session.getAttribute("totalCount");
+            if (totalCount == null) {
+                totalCount = 1;
+                session.setAttribute("totalCount", totalCount);
+            } else {
+                session.setAttribute("totalCount", ++totalCount);
+            }
+        }
+        return getView();
+    }
 
+    @Override
+    public String doPost(HttpServletRequest request) {
+        String stringId = request.getParameter("id");
+
+        if(request.getParameter("name")!=null) {
+            setQuestName(request);
+        }
+        if (stringId != null) {
+            long id = Long.parseLong(stringId);
+            Optional<Quest> optionalQuest = questService.get(id);
+            if (optionalQuest.isPresent()) {
+                Quest quest = optionalQuest.get();
+                request.setAttribute("quest", quest);
+            }
+        }
         if(stringId.equals("1")){
             HttpSession session = request.getSession();
             Integer totalCount = (Integer) session.getAttribute("totalCount");
@@ -63,7 +91,6 @@ public class QuestSteps implements Command {
         return "1";
     }
     private void setQuestName(HttpServletRequest request) {
-
             String name = request.getParameter("name");
             HttpSession session = request.getSession();
             session.setAttribute("questName", name);

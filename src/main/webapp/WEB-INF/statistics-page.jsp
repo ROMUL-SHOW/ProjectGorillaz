@@ -14,8 +14,7 @@
 <div style="display: flex; justify-content: center;  height: 50vh;">
     <div id="diagram" style="width: 600px; height: 500px;"></div>
 </div>
-
-
+<br>
 
 <script>
     google.load("visualization", "1", {packages:["corechart"]});
@@ -39,4 +38,4 @@
     }
 </script>
 </body>
-
+<%@include file="footer.jsp" %>

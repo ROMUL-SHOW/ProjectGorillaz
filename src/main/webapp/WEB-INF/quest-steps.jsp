@@ -15,8 +15,10 @@
                 <p class="my-3 pt-lg-0 mt-lg-4 me-lg-0 pe-lg-0 pb-lg-0"
                    style="font-size: 18px;color: rgb(238,238,238);">
                     <c:if test="${requestScope.quest.id!='0'}">
-                        <strong><span
-                                style="color: rgb(255, 255, 255);"><%=session.getAttribute("questName")%>${requestScope.quest.reason}</span></strong>
+                        <strong>
+                            <span style="color: rgb(255, 255, 255);"><%=session.getAttribute("questName")%>${requestScope.quest.reason}
+                        </span>
+                        </strong>
                     </c:if>
                     <c:if test="${requestScope.quest.id=='0'}">
                         <strong><span style="color: rgb(255, 255, 255);">${requestScope.quest.reason}</span></strong>
@@ -26,10 +28,11 @@
                     style="font-size: 31px;color: rgb(255,255,255);">
                     ${requestScope.quest.question}<br><br>
                 </h2>
-                <button class="btn btn-dark btn-lg border rounded me-2" type="button" id="1"
-                        style="background: rgb(4,197,0);color: rgb(255,255,255);">${requestScope.quest.answerPositive}</button>
+                <button class="btn btn-dark btn-lg border rounded me-2" type="button" id="btAnswerPositive"
+                        style="background: rgb(4,197,0);color: rgb(255,255,255);">${requestScope.quest.answerPositive}
+                </button>
                 <c:if test="${not empty requestScope.quest.answerNegative}">
-                    <button class="btn btn-dark btn-lg border rounded me-2" type="button" id="0" value=${requestScope.quest.answerNegative} style="background: #e70000;">
+                    <button class="btn btn-dark btn-lg border rounded me-2" type="button" id="btAnswerNegative" value="${requestScope.quest.answerNegative}" style="background: #e70000;">
                             ${requestScope.quest.answerNegative}
                     </button>
                 </c:if>
@@ -38,7 +41,7 @@
     </div>
 </div>
 <script>
-    $("#0").click(function () {
+    $("#btAnswerNegative").click(function () {
         $.ajax({
             url: 'quest-steps',
             method: 'GET',
@@ -51,7 +54,7 @@
             }
         });
     });
-    $("#1").click(function () {
+    $("#btAnswerPositive").click(function () {
         $.ajax({
             url: 'quest-steps',
             method: 'GET',

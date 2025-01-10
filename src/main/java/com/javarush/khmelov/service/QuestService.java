@@ -1,7 +1,6 @@
 package com.javarush.khmelov.service;
 
 import com.javarush.khmelov.entity.Quest;
-
 import com.javarush.khmelov.repository.QuestRepository;
 
 import java.util.Optional;

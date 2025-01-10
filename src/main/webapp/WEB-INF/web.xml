@@ -3,19 +3,4 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
-    <servlet>
-        <servlet-name>QuestController</servlet-name>
-        <servlet-class>com.javarush.khmelov.controller.QuestController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>QuestController</servlet-name>
-        <url-pattern>/start-quest</url-pattern> <!-- Нужно использовать слэш в начале -->
-        <url-pattern>/step-1</url-pattern> <!-- Нужно использовать слэш в начале -->
-        <url-pattern>/step-2</url-pattern> <!-- Нужно использовать слэш в начале -->
-        <url-pattern>/step-3</url-pattern> <!-- Нужно использовать слэш в начале -->
-        <url-pattern>/step-4</url-pattern> <!-- Нужно использовать слэш в начале -->
-        <url-pattern>/step-5</url-pattern> <!-- Нужно использовать слэш в начале -->
-        <url-pattern>/victory</url-pattern> <!-- Нужно использовать слэш в начале -->
-        <url-pattern>/game-over</url-pattern> <!-- Нужно использовать слэш в начале -->
-    </servlet-mapping>
 </web-app>

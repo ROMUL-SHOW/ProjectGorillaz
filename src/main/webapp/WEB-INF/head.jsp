@@ -1,8 +1,8 @@
+<%@ page import="com.javarush.khmelov.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -30,13 +30,20 @@
             <ul class="navbar-nav mx-auto main-nav">
                 <li class="nav-item"><a class="nav-link pb-0" id="home" href="/" style="font-family: Amarante, serif;color: #eeeeee;">Квест</a></li>
                 <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link pb-0" href="statistics-page" style="font-family: Amarante, serif;color: #eeeeee;">Статистика</a></li>
-                <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Новости</a></li>
-                <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link mb-0 pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Форум</a></li>
+<%--                <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Новости</a></li>
+                <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link mb-0 pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Форум</a></li>--%>
                 <li class="nav-item" style="font-family: Amarante, serif;color: #eeeeee;"><a class="nav-link mt-0 mb-0 pb-0" href="list-user" style="font-family: Amarante, serif;color: #eeeeee;">Пользователи</a></li>
             </ul>
             <ul class="navbar-nav main-nav">
-                <li class="nav-item" style="font-family: Amarante, serif;"><a class="nav-link border rounded-0 border-3 border-info-subtle pb-0" href="#" style="font-family: Amarante, serif;color: #eeeeee;">Login</a></li>
+                <c:if test="${sessionScope.user == null}">
+                <li class="nav-item" style="font-family: Amarante, serif;"><a class="nav-link border rounded-0 border-3 border-info-subtle pb-0" href="login" style="font-family: Amarante, serif;color: #eeeeee;">Login</a></li>
                 <li class="nav-item"><a class="nav-link mb-0 pb-0" href="edit-user" style="font-family: Amarante, serif;"><span style="color: rgb(238, 238, 238);">Register</span></a></li>
+                </c:if>
+                <c:if test="${sessionScope.user != null}">
+
+                <li class="nav-item" style="font-family: Amarante, serif;"><a class="nav-link border rounded-0 border-3 border-info-subtle pb-0" href="edit-user?id=<c:out value="${sessionScope.user.id}" />" style="font-family: Amarante, serif;color: #eeeeee;"><c:out value="${sessionScope.user.login}" /></a></li>
+                <li class="nav-item" style="font-family: Amarante, serif;"><a class="nav-link border rounded-0 border-3 border-info-subtle pb-0" href="log-out" style="font-family: Amarante, serif;color: #eeeeee;">Выйти</a></li>
+                </c:if>
             </ul>
         </div>
     </div>

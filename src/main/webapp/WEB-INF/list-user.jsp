@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="head.jsp"%>
+<head>
+    <title>List User</title>
+</head>
 <body>
 <head>
     <style>
@@ -30,4 +33,5 @@
 </c:forEach>
 </div>
 </body>
+<%@include file="footer.jsp" %>
 

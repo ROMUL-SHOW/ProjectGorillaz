@@ -1,5 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="head.jsp" %>
+    <c:if test="${requestScope.user==null}">
+        <title>Register</title>
+    </c:if>
+    <c:if test="${requestScope.user!=null}">
+        <title>Edit user</title>
+    </c:if>
+</title>
 <body>
 <div class="container">
     <form class="form-horizontal" method="post">
@@ -76,4 +83,5 @@
     </form>
 </div>
 </body>
+<%@include file="footer.jsp" %>
 

@@ -4,7 +4,6 @@ import com.javarush.khmelov.entity.Role;
 import com.javarush.khmelov.entity.User;
 import com.javarush.khmelov.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
-
 import java.util.Optional;
 
 
@@ -21,7 +20,7 @@ public class EditUser implements Command {
     @Override
     public String doGet(HttpServletRequest req) {
         String stringId = req.getParameter("id");
-        if (stringId != null) {
+        if (stringId != null ) {
             long id = Long.parseLong(stringId);
             Optional<User> optionalUser = userService.get(id);
             if (optionalUser.isPresent()) {
@@ -29,6 +28,7 @@ public class EditUser implements Command {
                 req.setAttribute("user", user);
             }
         }
+
         return getView();
     }
 
@@ -43,7 +43,14 @@ public class EditUser implements Command {
             userService.create(user);
         } else if (req.getParameter("update") != null) {
             user.setId(Long.parseLong(req.getParameter("id")));
-            userService.update(user);
+            if(req.getSession().getAttribute("user") != null) {
+                User userFromSession = (User) req.getSession().getAttribute("user");
+                Long userId = userFromSession.getId();
+                Role role = userFromSession.getRole();
+                if(userId.equals(user.getId()) || role == Role.ADMIN) {
+                    userService.update(user);
+                }
+            }
         }
         return getView() + "?id=" + user.getId();
     }

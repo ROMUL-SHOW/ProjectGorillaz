@@ -12,22 +12,19 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet({"", "/home", "/list-user", "/edit-user", "/statistics-page", "/quest-steps"})
+@WebServlet({"", "/home", "/list-user", "/edit-user", "/statistics-page","/quest-steps", "/login", "/log-out"})
 public class FrontController extends HttpServlet {
 
     private final HttpResolver httpResolver = Winter.find(HttpResolver.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-/*        if(req.getRequestURI().equals("/statistics-page")) {
-            String jsp = getJsp("statistics-page");
-            req.getRequestDispatcher(jsp).forward(req, resp);
-        } else {*/
+
             Command command = httpResolver.resolve(req);
             String view = command.doGet(req);
             String jsp = getJsp(view);
             req.getRequestDispatcher(jsp).forward(req, resp);
-        //}
+
     }
 
     @Override
