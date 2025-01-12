@@ -1,6 +1,7 @@
 package com.javarush.khmelov.repository;
 
 import com.javarush.khmelov.entity.Role;
+import com.javarush.khmelov.entity.Statistic;
 import com.javarush.khmelov.entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,7 @@ public class UserRepositoryTest {
                 .password("admin")
                 .role(Role.ADMIN)
                 .build();
-
+        expectedUser.setStatistic(new Statistic(26L, 18L));
         Optional<User> user = userRepository.get(3L);
         assertTrue(user.isPresent(), "User with ID 3 should exist");
         assertEquals(expectedUser, user.get(), "User with ID 3 does not match expected");
