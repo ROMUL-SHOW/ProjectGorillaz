@@ -1,6 +1,7 @@
 package com.javarush.khmelov.repository;
 
 import com.javarush.khmelov.entity.Role;
+import com.javarush.khmelov.entity.Statistic;
 import com.javarush.khmelov.entity.User;
 import java.util.Collection;
 import java.util.HashMap;
@@ -16,9 +17,9 @@ public class UserRepository implements Repository<User> {
 
     public UserRepository() {
         map.put(1L, new User(1L, "Alisa", "qwerty", Role.USER));
-        map.put(2L, new User(2L, "Bob", "", Role.GUEST));
-        map.put(3L, new User(3L, "Carl", "admin", Role.ADMIN));
-        map.put(4L, new User(4L, "Khmelov", "admin", Role.ADMIN));
+        map.put(2L, new User(2L, "Bob", "", Role.GUEST, new Statistic(3L, 1L)));
+        map.put(3L, new User(3L, "Carl", "admin", Role.ADMIN, new Statistic(26L, 18L)));
+        map.put(4L, new User(4L, "Khmelov", "admin", Role.ADMIN, new Statistic(50L, 35L)));
     }
 
     @Override
